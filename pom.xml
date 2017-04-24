@@ -24,6 +24,7 @@
         <module>amazons3</module>
         <module>nio</module>
         <module>activemq</module>
+        <module>rocketmq</module>
     </modules>
 
     <dependencies>

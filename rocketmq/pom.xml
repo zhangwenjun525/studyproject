@@ -11,5 +11,11 @@
 
     <artifactId>rocketmq</artifactId>
 
-
+    <dependencies>
+        <dependency>
+            <groupId>com.alibaba.rocketmq</groupId>
+            <artifactId>rocketmq-client</artifactId>
+            <version>3.6.2.Final</version>
+        </dependency>
+    </dependencies>
 </project>

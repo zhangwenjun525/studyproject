@@ -1,6 +1,7 @@
 package sample.producer;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jms.JmsException;
 import org.springframework.jms.core.JmsTemplate;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +18,7 @@ public class MQProducer {
     @Autowired
     private JmsTemplate jmsTemplate;
 
-    public void sendMessage(String message){
+    public void sendMessage(String message) throws JmsException {
         jmsTemplate.send(session -> session.createTextMessage(message));
     }
 

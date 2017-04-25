@@ -28,7 +28,7 @@ public class Producer {
             result = producer.send(msg);
             System.out.println("id:" + result.getMsgId() + ", result:" + result.getSendStatus());
 
-            msg = new Message("PushTopic", "push", "1", "Just for test3.".getBytes());
+            msg = new Message("PushTopic", "push", "3", "Just for test3.".getBytes());
             result = producer.send(msg);
             System.out.println("id:" + result.getMsgId() + ", result:" + result.getSendStatus());
 

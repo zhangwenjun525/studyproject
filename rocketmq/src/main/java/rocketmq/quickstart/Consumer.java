@@ -29,8 +29,12 @@ public class Consumer {
             consumer.registerMessageListener(new MessageListenerConcurrently() {
                 @Override
                 public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> list, ConsumeConcurrentlyContext consumeConcurrentlyContext) {
-                    Message msg = list.get(0);
-                    System.out.println(msg.toString());
+                   /* Message msg = list.get(0);
+                    System.out.println(new String(msg.getBody()));
+                   // System.out.println(msg.toString());*/
+                    for(Message msg:list){
+                        System.out.println(new String(msg.getBody()));
+                    }
                     return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
                 }
             });

@@ -21,7 +21,8 @@ public class Consumer {
 
     public static void main(String[] args) {
         DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("PushConsumer");
-        consumer.setNamesrvAddr("192.168.133.141:9876");
+        consumer.setNamesrvAddr("127.0.0.1:9876");
+        consumer.setVipChannelEnabled(false);
         try{
             consumer.subscribe("PushTopic", "push");
             consumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET);

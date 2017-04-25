@@ -15,7 +15,8 @@ public class Producer {
 
     public static void main(String[] args) {
         DefaultMQProducer producer = new DefaultMQProducer("Producer");
-        producer.setNamesrvAddr("192.168.133.141:9876");
+        producer.setNamesrvAddr("127.0.0.1:9876");
+        producer.setVipChannelEnabled(false);
         try {
             producer.start();
 

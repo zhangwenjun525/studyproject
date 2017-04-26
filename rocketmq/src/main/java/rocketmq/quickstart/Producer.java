@@ -19,19 +19,11 @@ public class Producer {
         producer.setVipChannelEnabled(false);
         try {
             producer.start();
-
-            Message msg = new Message("PushTopic", "push", "1", "Just for test1.".getBytes());
-            SendResult result = producer.send(msg);
-            System.out.println("id:" + result.getMsgId() + ", result:" + result.getSendStatus());
-
-            msg = new Message("PushTopic", "push", "2", "Just for test2.".getBytes());
-            result = producer.send(msg);
-            System.out.println("id:" + result.getMsgId() + ", result:" + result.getSendStatus());
-
-            msg = new Message("PushTopic", "push", "3", "Just for test3.".getBytes());
-            result = producer.send(msg);
-            System.out.println("id:" + result.getMsgId() + ", result:" + result.getSendStatus());
-
+            for(int i = 0; i < 10; ++i){
+                Message msg = new Message("QuickStart", ("quick start message " + i).getBytes());
+                SendResult sendResult = producer.send(msg);
+                System.out.println(sendResult);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

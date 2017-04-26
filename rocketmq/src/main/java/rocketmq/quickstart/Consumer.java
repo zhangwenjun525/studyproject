@@ -24,17 +24,13 @@ public class Consumer {
         consumer.setNamesrvAddr("127.0.0.1:9876");
         consumer.setVipChannelEnabled(false);
         try{
-            consumer.subscribe("PushTopic", "push");
+            consumer.subscribe("QuickStart", "*");
             consumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET);
             consumer.registerMessageListener(new MessageListenerConcurrently() {
                 @Override
                 public ConsumeConcurrentlyStatus consumeMessage(List<MessageExt> list, ConsumeConcurrentlyContext consumeConcurrentlyContext) {
-                   /* Message msg = list.get(0);
+                    Message msg = list.get(0);
                     System.out.println(new String(msg.getBody()));
-                   // System.out.println(msg.toString());*/
-                    for(Message msg:list){
-                        System.out.println(new String(msg.getBody()));
-                    }
                     return ConsumeConcurrentlyStatus.CONSUME_SUCCESS;
                 }
             });

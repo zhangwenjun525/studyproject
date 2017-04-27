@@ -14,13 +14,13 @@ import com.alibaba.rocketmq.common.message.Message;
 public class Producer {
 
     public static void main(String[] args) {
-        DefaultMQProducer producer = new DefaultMQProducer("Producer");
+        DefaultMQProducer producer = new DefaultMQProducer("TestProducer");
         producer.setNamesrvAddr("127.0.0.1:9876");
         producer.setVipChannelEnabled(false);
         try {
             producer.start();
             for(int i = 0; i < 10; ++i){
-                Message msg = new Message("QuickStart", ("quick start message " + i).getBytes());
+                Message msg = new Message("QuickStartTest", ("quick start message " + i).getBytes());
                 SendResult sendResult = producer.send(msg);
                 System.out.println(sendResult);
             }

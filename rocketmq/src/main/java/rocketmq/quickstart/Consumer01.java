@@ -17,7 +17,7 @@ import java.util.List;
  * Date: 2017/4/25
  * Time: 0:06
  */
-public class Consumer {
+public class Consumer01 {
 
     public static void main(String[] args) {
         DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("PushConsumerTest");

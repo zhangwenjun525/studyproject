@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.time.Instant;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 /**
  * Create by IntelliJ IDEA
@@ -31,6 +32,17 @@ public class LocalDateTimeTest {
     public void test2(){
         Instant instant = Instant.now();
         System.out.println(instant);
+    }
+
+
+    @Test
+    public void test3(){
+        System.out.println(new Date().getTime());
+
+        Instant instant = Instant.now();
+        System.out.println(instant.toEpochMilli());
+
+        System.out.println(System.currentTimeMillis());
     }
 
 }

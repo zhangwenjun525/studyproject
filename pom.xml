@@ -26,6 +26,7 @@
         <module>activemq</module>
         <module>rocketmq</module>
         <module>tongdun</module>
+        <module>zookeeper</module>
     </modules>
 
     <dependencies>

@@ -25,7 +25,6 @@ public class PullComsumer {
         String group_name= "pull_consumer";
         DefaultMQPullConsumer consumer = new DefaultMQPullConsumer(group_name);
         consumer.setNamesrvAddr("127.0.0.1:9876");
-        consumer.setVipChannelEnabled(false);
         consumer.start();
 //获取订阅topic的queue
         Set<MessageQueue> mqs = consumer.fetchSubscribeMessageQueues("TopicTest1");

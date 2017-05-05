@@ -1,6 +1,5 @@
 package rocketmq.filter;
 
-import com.alibaba.rocketmq.common.filter.FilterContext;
 import com.alibaba.rocketmq.common.filter.MessageFilter;
 import com.alibaba.rocketmq.common.message.MessageExt;
 
@@ -12,9 +11,8 @@ import com.alibaba.rocketmq.common.message.MessageExt;
  * Time: 14:38
  */
 public class MessageFilterImpl implements MessageFilter {
-
     @Override
-    public boolean match(MessageExt messageExt, FilterContext filterContext) {
+    public boolean match(MessageExt messageExt) {
         String property = messageExt.getUserProperty("SequenceId");
 
         if (property != null) {

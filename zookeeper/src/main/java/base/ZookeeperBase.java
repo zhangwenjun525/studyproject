@@ -70,7 +70,6 @@ public class ZookeeperBase {
         Stat exists = zk.exists("/testRoot", false);
         System.out.println(exists);
 
-
         TimeUnit.SECONDS.sleep(5);
         zk.close();
 

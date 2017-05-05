@@ -20,7 +20,6 @@ public class Producer {
     public static void main(String[] args) throws MQClientException {
         TransactionMQProducer producer = new TransactionMQProducer("transalation_producer_group");
         producer.setNamesrvAddr("127.0.0.1:9876");
-        producer.setVipChannelEnabled(false);
 
         /**
          * 事务回查

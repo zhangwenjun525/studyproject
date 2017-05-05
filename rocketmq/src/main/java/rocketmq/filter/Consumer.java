@@ -22,7 +22,6 @@ public class Consumer {
     public static void main(String[] args) throws InterruptedException, MQClientException {
         DefaultMQPushConsumer consumer = new DefaultMQPushConsumer("ConsumerGroupNamecc4");
         consumer.setNamesrvAddr("127.0.0.1:9876");
-        consumer.setVipChannelEnabled(false);
         String filterCode = MixAll.file2String("E:\\Code\\idea\\studyproject\\rocketmq\\src\\main\\java\\rocketmq\\filter\\MessageFilterImpl.java");
        consumer.subscribe("TopicFilter7", "rocketmq.filter.MessageFilterImpl",
                 filterCode);

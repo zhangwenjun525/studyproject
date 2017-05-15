@@ -29,6 +29,8 @@
         <module>zookeeper</module>
         <module>dubbo-provider</module>
         <module>dubbo-consumer</module>
+        <module>storm</module>
+        <module>spring-boot-shiro</module>
     </modules>
 
     <dependencies>

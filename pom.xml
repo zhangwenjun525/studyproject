@@ -31,6 +31,7 @@
         <module>dubbo-consumer</module>
         <module>storm</module>
         <module>spring-boot-shiro</module>
+        <module>solr</module>
     </modules>
 
     <dependencies>

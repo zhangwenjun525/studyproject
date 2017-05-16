@@ -1,7 +1,13 @@
 package jvm;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
+
 import java.time.Instant;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Create by IntelliJ IDEA
@@ -33,5 +39,14 @@ public class JVMDemo1 {
 
         System.out.println(new Date().getTime());
 
+        List<String> bikeIds = new ArrayList<>(Arrays.asList("123456","1234564","234567"));
+        String s1 = JSON.toJSONString(bikeIds);
+        System.out.println(s1);
+
+        List<String> strings = JSON.parseArray("[\"123456\",\"1234564\",\"234567\"]", String.class);
+        System.out.println(strings);
+
+        String[] bIds = {"123456","1234564","234567"};
+        System.out.println(JSON.toJSONString(bIds));
     }
 }

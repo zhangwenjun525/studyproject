@@ -32,6 +32,7 @@
         <module>storm</module>
         <module>spring-boot-shiro</module>
         <module>solr</module>
+        <module>httpclient</module>
     </modules>
 
     <dependencies>

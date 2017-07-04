@@ -4,7 +4,9 @@ import org.junit.Before;
 import org.junit.Test;
 import redis.clients.jedis.Jedis;
 
+import java.util.Calendar;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Create by IntelliJ IDEA
@@ -19,7 +21,7 @@ public class RedisTest {
 
     @Before
     public void init() {
-        jedis = new Jedis("182.92.235.106", 6379);
+        jedis = new Jedis("127.0.0.1", 6379);
     }
 
 
@@ -46,5 +48,26 @@ public class RedisTest {
         System.out.println(map.toString());
     }
 
+    @Test
+    public void inc() throws InterruptedException {
+        String key = "1FD16";
+        for(int i = 0; i < 10; ++i){
+            new Thread(()->{
+                inc(key);
+            }).start();
+        }
+        System.out.println("==================");
+        TimeUnit.SECONDS.sleep(100);
+    }
 
+    private void inc(String key){
+        System.out.println(jedis.incr(key));
+    }
+
+    @Test
+    public void test1(){
+        Calendar cl = Calendar.getInstance();
+        int week = cl.get(Calendar.WEEK_OF_YEAR);
+        System.out.println(week);
+    }
 }

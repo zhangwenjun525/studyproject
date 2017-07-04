@@ -1,11 +1,9 @@
 package lambda;
 
+import org.apache.commons.collections.map.HashedMap;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 import java.util.function.*;
 
 /**
@@ -88,5 +86,11 @@ public class LambdaTest {
         System.out.println(function.apply(10).length);
     }
 
+    public static void main(String[] args) {
+        Map<String, Object> map = new HashedMap();
+        map.put("xx","xx");
+        map.put("yy","yy");
+        System.out.println(map.toString());
+    }
 
 }

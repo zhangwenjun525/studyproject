@@ -21,7 +21,7 @@ public class RedisTest {
 
     @Before
     public void init() {
-        jedis = new Jedis("127.0.0.1", 6379);
+        jedis = new Jedis("192.168.4.11", 6379);
     }
 
 
@@ -38,7 +38,7 @@ public class RedisTest {
 
     @Test
     public void tesetGet() {
-        String name = jedis.get("name");
+        String name = jedis.get("1FD1732");
         System.out.println(name);
     }
 

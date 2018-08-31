@@ -25,14 +25,15 @@
         <module>nio</module>
         <module>activemq</module>
         <module>rocketmq</module>
-        <module>tongdun</module>
         <module>zookeeper</module>
         <module>dubbo-provider</module>
         <module>dubbo-consumer</module>
-        <module>storm</module>
         <module>spring-boot-shiro</module>
         <module>solr</module>
         <module>httpclient</module>
+        <module>java</module>
+        <module>disruptor</module>
+        <module>pattern</module>
     </modules>
 
     <dependencies>
@@ -54,7 +55,6 @@
                     <target>${java.version}</target>
                 </configuration>
             </plugin>
-
         </plugins>
     </build>
 

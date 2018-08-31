@@ -28,7 +28,7 @@ import java.util.*;
  * Date: 2017/6/22
  * Time: 11:16
  */
-public class HttpClinetUtil {
+public class HttpClientUtil {
     private static PoolingHttpClientConnectionManager cm;
     private static RequestConfig requestConfig;
     private static String EMPTY_STR = "";
@@ -213,53 +213,12 @@ public class HttpClinetUtil {
         sb.append(secretKey);
         return MD5(sb.toString());
     }
-
-    //&signature=f0d24efa7423efeec297ad4ed45d7879
-//GWTime=&RespCode=00&RespMsg=&acqID=99020344&charSet=UTF-8&merID=800039253992422&orderNum=201706280325373c029777&signType=MD5&transID=xP8hrceSuLzNMRzy&transTime=20170628170900&transType=REFD&version=VER000000002a36b2aa7519e4f73aecdf752df1a3ea5
-
     public static void main(String[] args) throws URISyntaxException, UnsupportedEncodingException {
-/*        Map<String,Object> paramMap = new HashMap<>();
-        paramMap.put("version","VER000000002");
-        paramMap.put("charSet","UTF-8");
-        paramMap.put("transType","REFD");
-        paramMap.put("orderNum","201706280325373c029777");
-        paramMap.put("returnAmount","0.2");
-        paramMap.put("merID","800039253992422");
-        paramMap.put("acqID","99020344");
-        paramMap.put("merReserve","order refund");
-        paramMap.put("paymentSchema","FC");
-        paramMap.put("transTime","20170628170900");
-        paramMap.put("signType","MD5");
-
-        long start = System.currentTimeMillis();
-        String signature = createSignature(paramMap, "a36b2aa7519e4f73aecdf752df1a3ea5");
-        paramMap.put("signature", signature);
-       try{
-            System.out.println(httpGetRequest("http://testapi.allpayx.com:8000/epayment/common", paramMap));
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-        long end = System.currentTimeMillis();
-
-        System.out.println(end - start);*/
-
-        //System.out.println(MD5("GWTime=&RespCode=00&RespMsg=&acqID=99020344&charSet=UTF-8&merID=800039253992422&orderNum=201706280325373c029777&signType=MD5&transID=xP8hrceSuLzNMRzy&transTime=20170628170900&transType=REFD&version=VER000000002a36b2aa7519e4f73aecdf752df1a3ea5"));
-        System.out.println(UUID.randomUUID().toString().replaceAll("-",""));
-
-
-    /*    List<Integer> list = new ArrayList<>();
-        list.add(1);
-        list.add(2);
-        list.add(1);
-
-
-        Set<Integer> set = new HashSet<>();
-        set.addAll(list);
-
-        System.out.println(set);*/
-
-
-
-
+        String URL_GEOCODE_PARSE ="http://api.map.baidu.com/geocoder/v2/?output=json&ak=";
+        StringBuilder sb = new StringBuilder(URL_GEOCODE_PARSE);
+        sb.append("oORLhRUIlqafjtR2qoMBhR7Mso3eTKtK");
+        sb.append(String.format("&location=%s,%s",30.236428,120.202628));
+        String result = httpGetRequest(sb.toString());
+        System.out.println(result);
     }
 }

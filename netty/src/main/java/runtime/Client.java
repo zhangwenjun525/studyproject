@@ -1,6 +1,5 @@
 package runtime;
 
-import com.zhangwj.project.java8.utils.MarshallingCodeCFactory;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
@@ -45,8 +44,8 @@ public class Client {
                     @Override
                     protected void initChannel(SocketChannel socketChannel) throws Exception {
                         socketChannel.pipeline()
-                                .addLast(MarshallingCodeCFactory.buildMarshallingEncoder())
-                                .addLast(MarshallingCodeCFactory.buildMarshallingDecoder())
+/*                                .addLast(MarshallingCodeCFactory.buildMarshallingEncoder())
+                                .addLast(MarshallingCodeCFactory.buildMarshallingDecoder())*/
                                 .addLast(new ReadTimeoutHandler(5))
                                 .addLast(new ClientHandler());
                     }
